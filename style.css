@@ -1,0 +1,100 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.apps {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.app {
+    max-width: 300px;
+    font-family: sans-serif;
+    color: #ffffff;
+    padding: 28px;
+    border-radius: 12px;
+    background: radial-gradient(90.56% 77.62% at 9.58% 6.67%, rgba(52, 62, 222, 0.05) 0%, rgba(52, 62, 222, 0) 100%), #141217;
+}
+
+.app a {
+    text-decoration: none;
+    color: inherit;
+    transition : color 0.4s ease;
+    width: max-content;
+    padding: 2px;
+}
+
+.app a:hover {
+    color: #7B3FE4;
+}
+
+.app-logo-categories {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+}
+.app-logo-categories .app-categories {}
+
+.app-logo-categories ul {
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.app-logo-categories .app-logo {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+}
+
+.app-overview {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.app .app-overview h3 {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.app .app-overview p {
+    color: #87868C;
+}
+.app-logo-categories .app-category {
+    padding: 6px;
+    background-color: #212026;
+    color: white;
+    border-radius: 5px;
+}
+
+.splide__track {
+    /* padding: 0 50px !important; */
+}
+
+.splide__slide {
+    cursor: pointer !important;
+    border: 1px solid #2D2C33 !important; 
+    padding: 14px 24px;
+    border-radius: 12px;
+    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.01);
+    transition-property: border-color, background-color, color;
+    transition-duration: 0.4s;
+    transition-timing-function: ease;
+}
+
+.splide__slide:hover {
+    border: 1px solid #532E92;
+    background-color: #2F1A52;
+    color: #ffffff;
+}
+
+.load-more.hidden, .load-less.hidden {
+    display: none;
+}
+
