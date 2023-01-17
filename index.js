@@ -30,17 +30,17 @@ const mountSlide = () => {
     })
 }
 
-loadMoreBtn.addEventListener('click', () => {
-    renderAppList(currentTableEnteries, true)
-    hide(loadMoreBtn)
-    show(loadLessBtn)
-})
+// loadMoreBtn.addEventListener('click', () => {
+//     renderAppList(currentTableEnteries, true)
+//     hide(loadMoreBtn)
+//     show(loadLessBtn)
+// })
 
-loadLessBtn.addEventListener('click', () => {
-    renderAppList(currentTableEnteries, false)
-    show(loadMoreBtn)
-    hide(loadLessBtn)
-})
+// loadLessBtn.addEventListener('click', () => {
+//     renderAppList(currentTableEnteries, false)
+//     show(loadMoreBtn)
+//     hide(loadLessBtn)
+// })
 
 const filterAppsList = (categoryName) => {
     
@@ -93,17 +93,17 @@ const renderAppList = (apps, loadMore = false) => {
     const appsToRender = loadMore ? apps : apps.slice(0,NUM_OF_APPS_TO_SHOW)
 
     appsToRender.forEach((app) => {
-        const overview = `<div class="app-overview">
-            <h3>${app.name}</h3>
-            <p>${app.description}</p>
+        const overview = `<div class="web3-applist_card-component">
+            <h4 class="text-weight-medium">${app.name}</h4>
+            <p class="text-style-5lines text-color-grey7">${app.description}</p>
 
             <a target="_blank" href=${app.link}>Read More</a>
         </div>`
 
-        let ul = document.createElement('ul')
-
+        let div = document.createElement('div')
+        div.classList.add('web3-applist_tag-wrapper')
         app.categories.forEach((item) => {
-            ul.innerHTML += `<li class='app-category'>${item}</li>`
+            div.innerHTML += `<div class='web3-applist_tag'>${item}</div>`
         })
 
         
@@ -111,14 +111,14 @@ const renderAppList = (apps, loadMore = false) => {
             <div class="app-logo-categories">
                 <img class="app-logo" src="/sample-logo.png" alt="" srcset="">
 
-                <ul>${ul.innerHTML}</ul>
+                <ul>${div.innerHTML}</ul>
             </div>
 
             ${overview}
 
         </div>`
 
-        document.querySelector('.apps').innerHTML += newApp
+        document.querySelector('.web3-applist_component').innerHTML += newApp
 
     })
 
